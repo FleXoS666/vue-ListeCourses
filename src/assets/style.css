@@ -1,0 +1,16 @@
+*{
+	margin: 0;
+	padding:0;
+	border: 0;
+}
+
+body{
+	font-family: Roboto, sans-serif;
+}
+
+.topBar{
+	background-color: #292930;
+	color:white;
+	height:2.5em;
+	padding: 1.5em;
+}
