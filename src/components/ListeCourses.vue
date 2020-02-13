@@ -2,7 +2,7 @@
   <div class="hello">
   
     <ul >
-      <li v-for="(itemList,index) in itemsList" :key='index' :value="index">{{ itemList }}</li>
+      <li v-for="(itemList,index) in itemsList" :key='index' :value="index">{{ itemList }}  <button v-on:click="delElmt(index)">X</button></li>
     </ul>
   </div>
 </template>
@@ -13,7 +13,12 @@ export default {
   props: {
     inputValue:String,
     itemsList: Array,
-    clearList: Boolean
+    clearList: Boolean,
+  },methods:{
+    delElmt(index){
+      console.log(index)
+      this.$emit("deleteElement", index)
+    }
   }
 }
 </script>

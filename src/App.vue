@@ -4,7 +4,7 @@
     <Top :title="title"></Top>
     <UserInputForm @inputChanged="updateList"></UserInputForm>
     <ClearAll @listClearing="clearList"></ClearAll>
-    <ListeCourses :itemsList="itemsList"/>
+    <ListeCourses :itemsList="itemsList" @deleteElement="delElmt"/>
     
   </div>
 </template>
@@ -30,18 +30,26 @@ export default {
 
     }
   },mounted(){
-    
+// localStorage
   }
 
 
   ,methods:{
     updateList(newItem){
       this.itemsList.push(newItem)
+      console.log(this.itemsList.slice(2,3));
     },
     clearList(){
     this.itemsList=[]
         // this.itemsList.clear()
-        console.log('salut grosse pute')
+    },
+    delElmt(itemKey){
+     
+      // var itemKey2=parseFloat(itemKey) +1
+    this.itemsList.splice(itemKey,1)
+ // console.log(itemKey,itemKey2)
+// this.itemsList.delete(Elt)
+// console.log(Elt)
     }
   }
 }

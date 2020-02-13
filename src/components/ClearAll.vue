@@ -17,7 +17,7 @@ return{
 },methods:{
 clearList(){
 
-this.$emit("listClearing", this.clearList)
+this.$emit("listClearing")
 }
 }
 }
