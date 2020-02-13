@@ -2,19 +2,22 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <Top :title="title"></Top>
-    <ListeCourses msg="Welcome to Your Vue.js App"/>
+    <UserInputForm></UserInputForm>
+    <ListeCourses/>
   </div>
 </template>
 
 <script>
 import ListeCourses from './components/ListeCourses.vue'
 import Top from './components/Top.vue'
+import UserInputForm from './components/UserInputForm.vue'
 
 export default {
   name: 'App',
   components: {
     ListeCourses,
-    Top
+    Top,
+    UserInputForm,
   },
   data(){
     return{
