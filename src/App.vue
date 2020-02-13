@@ -22,7 +22,7 @@ export default {
   data(){
     return{
       'title': "Liste de courses",
-      'itemsList': []    
+      'itemsList': ["bite","chatte"]
     }
   },methods:{
     updateList(newItem){
