@@ -1,6 +1,6 @@
 <template>
   <div class="clearLink">
-  <a >Vider la liste</a>
+  <a v-on:click="clearList">Vider la liste</a>
    
   </div>
 </template>
@@ -10,7 +10,16 @@ export default {
   name: 'ClearAll',
   props: {
     
-  }
+  },data(){
+return{
+// 'clearList': false
+}
+},methods:{
+clearList(){
+
+this.$emit("listClearing", this.clearList)
+}
+}
 }
 </script>
 

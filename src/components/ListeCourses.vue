@@ -12,7 +12,8 @@ export default {
   name: 'ListeCourses',
   props: {
     inputValue:String,
-    itemsList: Array
+    itemsList: Array,
+    clearList: Boolean
   }
 }
 </script>

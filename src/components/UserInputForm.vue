@@ -11,7 +11,7 @@
 	export default {
 		name: 'UserInputForm',
 		props: {
-			
+
 		}, data(){
 			return{
 				'inputValue': null,
@@ -20,6 +20,7 @@
 		methods:{
 			updateValue(){
 				this.$emit("inputChanged", this.inputValue)
+				this.inputValue=""
 			}
 		}
 	}

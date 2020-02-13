@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <Top :title="title"></Top>
     <UserInputForm @inputChanged="updateList"></UserInputForm>
-    <ClearAll></ClearAll>
+    <ClearAll @listClearing="clearList"></ClearAll>
     <ListeCourses :itemsList="itemsList"/>
     
   </div>
@@ -32,6 +32,13 @@ export default {
   },methods:{
     updateList(newItem){
       this.itemsList.push(newItem)
+    },
+    clearList(){
+    
+        this.itemsList.clearAll()
+        console.log('salut grosse pute')
+      
+      
     }
   }
 }
