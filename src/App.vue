@@ -29,16 +29,19 @@ export default {
       'itemsList': ["bite","chatte"],
 
     }
-  },methods:{
+  },mounted(){
+    
+  }
+
+
+  ,methods:{
     updateList(newItem){
       this.itemsList.push(newItem)
     },
     clearList(){
-    
-        this.itemsList.clearAll()
+    this.itemsList=[]
+        // this.itemsList.clear()
         console.log('salut grosse pute')
-      
-      
     }
   }
 }
