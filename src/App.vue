@@ -31,7 +31,10 @@ export default {
     }
   },mounted(){
 console.log('essayes de recuperer la liste')
-      localStorage.getItem(this.itemsList)
+     if(localStorage.getItem(this.itemsList)){
+      
+        this.itemsList=JSON.parse(localStorage.getItem(this.itemsList))
+     }
       // console.log(this.List)
       console.log(this.itemsList)
       console.log("mais")
@@ -48,6 +51,7 @@ localStorage.getItem(this.itemsList)
     },
     clearList(){
     this.itemsList=[]
+    localStorage.clear(this.itemsList)
         // this.itemsList.clear()
     },
     delElmt(itemKey){
