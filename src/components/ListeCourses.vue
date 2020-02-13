@@ -25,8 +25,11 @@ h3 {
   margin: 40px 0 0;
 }
 ul {
+  margin: 4em;
   list-style-type: none;
   padding: 0;
+  border:1px solid black;
+  border-radius: 6px;
 }
 li {
   /*display: inline-block;

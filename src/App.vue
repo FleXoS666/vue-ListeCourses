@@ -3,7 +3,9 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <Top :title="title"></Top>
     <UserInputForm @inputChanged="updateList"></UserInputForm>
+    <ClearAll></ClearAll>
     <ListeCourses :itemsList="itemsList"/>
+    
   </div>
 </template>
 
@@ -11,6 +13,7 @@
 import ListeCourses from './components/ListeCourses.vue'
 import Top from './components/Top.vue'
 import UserInputForm from './components/UserInputForm.vue'
+import ClearAll from './components/ClearAll.vue'
 
 export default {
   name: 'App',
@@ -18,11 +21,13 @@ export default {
     ListeCourses,
     Top,
     UserInputForm,
+    ClearAll,
   },
   data(){
     return{
       'title': "Liste de courses",
-      'itemsList': ["bite","chatte"]
+      'itemsList': ["bite","chatte"],
+
     }
   },methods:{
     updateList(newItem){
