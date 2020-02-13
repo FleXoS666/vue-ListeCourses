@@ -31,26 +31,31 @@ export default {
     }
   },mounted(){
 console.log('essayes de recuperer la liste')
-     if(localStorage.getItem(this.itemsList)){
+     if(localStorage.getItem('itemsList')){
       
-        this.itemsList=JSON.parse(localStorage.getItem(this.itemsList))
+        this.itemsList=JSON.parse(localStorage.getItem('itemsList'))
      }
       // console.log(this.List)
       console.log(this.itemsList)
       console.log("mais")
-  }
-
-
+  },watch:{
+            itemsList:{
+              handler(){
+                localStorage.setItem('itemsList',JSON.stringify(this.itemsList))
+              }
+}
+}
   ,methods:{
     itemsListing(){
 localStorage.getItem(this.itemsList)
     },
     updateList(newItem){
-      this.itemsList.push(newItem)
+      // this.itemsList.push(newItem)
+     // localStorage.setItem(newItem, JSON.stringify(this.itemsList))
       localStorage.setItem(newItem, this.itemsList)
     },
     clearList(){
-    this.itemsList=[]
+    // this.itemsList=[]
     localStorage.clear(this.itemsList)
         // this.itemsList.clear()
     },
