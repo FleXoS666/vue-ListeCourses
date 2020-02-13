@@ -31,8 +31,8 @@ export default {
     }
   },mounted(){
 console.log('essayes de recuperer la liste')
-      this.List=localStorage.getItem(this.itemsList)
-      console.log(this.List)
+      this.List=localStorage.getItem(this.value)
+      // console.log(this.List)
       console.log(this.itemsList)
       console.log("mais")
   }
@@ -48,8 +48,8 @@ console.log('essayes de recuperer la liste')
         // this.itemsList.clear()
     },
     delElmt(itemKey){
-    this.itemsList.splice(itemKey,1)
-    localStorage.removeItem(itemKey,this.itemsList)
+    // this.itemsList.splice(itemKey,1)
+    localStorage.removeItem(this.itemsList.splice(itemKey,1))
     }
   }
 }
