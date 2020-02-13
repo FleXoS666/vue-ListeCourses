@@ -2,8 +2,8 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <Top :title="title"></Top>
-    <UserInputForm></UserInputForm>
-    <ListeCourses/>
+    <UserInputForm @inputChanged="updateList"></UserInputForm>
+    <ListeCourses :itemsList="itemsList"/>
   </div>
 </template>
 
@@ -22,6 +22,11 @@ export default {
   data(){
     return{
       'title': "Liste de courses",
+      'itemsList': []    
+    }
+  },methods:{
+    updateList(newItem){
+      this.itemsList.push(newItem)
     }
   }
 }

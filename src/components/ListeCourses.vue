@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-   
+   <p>{{ itemsList }}</p>
     <ul>
       <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
       <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
@@ -15,7 +15,8 @@
 export default {
   name: 'ListeCourses',
   props: {
-    
+    inputValue:String,
+    itemsList: Array
   }
 }
 </script>
