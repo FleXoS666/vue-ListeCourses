@@ -26,30 +26,25 @@ export default {
   data(){
     return{
       'title': "Liste de courses",
-      'itemsList': ["bite","chatte"],
+      'itemsList': [],
 
     }
   },mounted(){
-// localStorage
+
   }
 
 
   ,methods:{
     updateList(newItem){
       this.itemsList.push(newItem)
-      console.log(this.itemsList.slice(2,3));
+      localStorage.setItem(newItem, this.itemsList)
     },
     clearList(){
     this.itemsList=[]
         // this.itemsList.clear()
     },
     delElmt(itemKey){
-     
-      // var itemKey2=parseFloat(itemKey) +1
     this.itemsList.splice(itemKey,1)
- // console.log(itemKey,itemKey2)
-// this.itemsList.delete(Elt)
-// console.log(Elt)
     }
   }
 }

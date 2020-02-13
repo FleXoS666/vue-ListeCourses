@@ -1,8 +1,7 @@
 <template>
   <div class="hello">
-  
-    <ul >
-      <li v-for="(itemList,index) in itemsList" :key='index' :value="index">{{ itemList }}  <button v-on:click="delElmt(index)">X</button></li>
+    <ul>
+      <li  v-for="(itemList,index) in itemsList" :key='index' :value="index">{{ itemList }}  <button v-on:click="delElmt(index)">X</button></li>
     </ul>
   </div>
 </template>
