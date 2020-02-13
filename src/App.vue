@@ -31,7 +31,7 @@ export default {
     }
   },mounted(){
 console.log('essayes de recuperer la liste')
-      this.List=localStorage.getItem(this.value)
+      localStorage.getItem(this.itemsList)
       // console.log(this.List)
       console.log(this.itemsList)
       console.log("mais")
@@ -39,6 +39,9 @@ console.log('essayes de recuperer la liste')
 
 
   ,methods:{
+    itemsListing(){
+localStorage.getItem(this.itemsList)
+    },
     updateList(newItem){
       this.itemsList.push(newItem)
       localStorage.setItem(newItem, this.itemsList)
