@@ -30,7 +30,11 @@ export default {
 
     }
   },mounted(){
-
+console.log('essayes de recuperer la liste')
+      this.List=localStorage.getItem(this.itemsList)
+      console.log(this.List)
+      console.log(this.itemsList)
+      console.log("mais")
   }
 
 
@@ -45,6 +49,7 @@ export default {
     },
     delElmt(itemKey){
     this.itemsList.splice(itemKey,1)
+    localStorage.removeItem(itemKey,this.itemsList)
     }
   }
 }
