@@ -3,8 +3,6 @@
   
     <ul >
       <li v-for="(itemList,index) in itemsList" :key='index' :value="index">{{ itemList }}</li>
-      <li></li>
-      <li></li>
     </ul>
   </div>
 </template>
@@ -32,10 +30,8 @@ ul {
   border-radius: 6px;
 }
 li {
-  /*display: inline-block;
-  margin: 0 10px;*/
-}
-a {
-  color: #42b983;
+  border:2px solid green;
+  margin: 10px;
+  padding: 0.3em;
 }
 </style>
