@@ -30,38 +30,36 @@ export default {
 
     }
   },mounted(){
-console.log('essayes de recuperer la liste')
-     if(localStorage.getItem('itemsList')){
+      console.log('essayes de recuperer la liste')
+      if(localStorage.getItem('itemsList')){
       
-        this.itemsList=JSON.parse(localStorage.getItem('itemsList'))
+      this.itemsList=JSON.parse(localStorage.getItem('itemsList'))
      }
       // console.log(this.List)
       console.log(this.itemsList)
       console.log("mais")
   },watch:{
-            itemsList:{
-              handler(){
-                localStorage.setItem('itemsList',JSON.stringify(this.itemsList))
-              }
+      itemsList:function(){
+          localStorage.setItem('itemsList',JSON.stringify(this.itemsList))
 }
 }
   ,methods:{
     itemsListing(){
-localStorage.getItem(this.itemsList)
+      localStorage.getItem(this.itemsList)
     },
     updateList(newItem){
       this.itemsList.push(newItem)
      // localStorage.setItem(newItem, JSON.stringify(this.itemsList))
-      localStorage.setItem(newItem, this.itemsList)
+      // localStorage.setItem(newItem, this.itemsList)
     },
     clearList(){
     this.itemsList=[]
-    localStorage.clear(this.itemsList)
-        // this.itemsList.clear()
+    // localStorage.clear(this.itemsList)
+        this.itemsList.clear()
     },
     delElmt(itemKey){
-    // this.itemsList.splice(itemKey,1)
-    localStorage.removeItem(this.itemsList.splice(itemKey,1))
+    this.itemsList.splice(itemKey,1)
+    // localStorage.removeItem(this.itemsList.splice(itemKey,1))
     }
   }
 }
