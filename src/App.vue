@@ -50,12 +50,12 @@ console.log('essayes de recuperer la liste')
 localStorage.getItem(this.itemsList)
     },
     updateList(newItem){
-      // this.itemsList.push(newItem)
+      this.itemsList.push(newItem)
      // localStorage.setItem(newItem, JSON.stringify(this.itemsList))
       localStorage.setItem(newItem, this.itemsList)
     },
     clearList(){
-    // this.itemsList=[]
+    this.itemsList=[]
     localStorage.clear(this.itemsList)
         // this.itemsList.clear()
     },
