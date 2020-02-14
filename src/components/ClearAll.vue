@@ -1,7 +1,13 @@
 <template>
   <div class="clearLink">
-  <a v-on:click="clearList">Vider la liste</a>
-   
+  <a v-if="!confirmMode" v-on:click="confirmMode=true">Vider la liste</a>
+   <div v-if="confirmMode">
+  <a v-on:click="mainClick">oui</a>&nbsp;
+  <a v-on:click="confirmMode=false">non</a>
+
+
+   </div>
+
   </div>
 </template>
 
@@ -12,24 +18,26 @@ export default {
     
   },data(){
 return{
+	'confirmMode': false
 // 'clearList': false
 }
 },methods:{
-clearList(){
+mainClick(){
 
-this.$emit("listClearing")
+	this.$emit("listClearing")
+this.confirmMode=false
+
 }
 }
 }
 </script>
 
 <style>
-.clearLink{
-	position: absolute;
+a{
+	/*position: absolute;*/
 	background-color:red;
 	color:white;
 	width:7em;
-	margin-left:1em;
 	padding:0.5em;
 	border-radius: 6px;
 }

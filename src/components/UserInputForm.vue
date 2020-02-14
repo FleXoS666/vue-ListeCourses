@@ -21,6 +21,7 @@
 			updateValue(){
 				this.$emit("inputChanged", this.inputValue)
 				this.inputValue=""
+				// this.resetForm()
 			}
 		}
 	}
